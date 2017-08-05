@@ -26,6 +26,7 @@
 				<th>Name</th>
 				<th>Email</th>
 				<th>Kayıt Tarihi</th>
+				<th>Fotoğraf</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -33,9 +34,10 @@
 	@foreach($users as $user)
 			<tr>
 				<td>{{$user->id}}</td>
-				<td>{{$user->name}}</td>
+				<td><a href="{{ route('users.edit', $user->id ) }}">{{$user->name}}</a></td>
 				<td>{{$user->email}}</td>
 				<td>{{$user->created_at->diffforhumans()}}</td>
+				<td><img src="{{ $user->photo ? $user->photo->file : 'no photo' }}"  height="100"></td>
 			</tr>
 	@endforeach
 @endif
