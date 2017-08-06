@@ -42,7 +42,7 @@
 				<td>{{$post->title}}</td>
 				<td>{{$post->body}}</td>
 				<td>{{$post->user->name}}</td>
-				<td>{{$post->category_id}}</td>
+				<td>{{$post->category ? $post->category->name : 'Empty'}}</td>
 				<td><img src="{{$post->photo ? $post->photo->file : 'https://placehold.it/400x400'}}" height="100px"></td>
 				<td>{{$post->created_at->diffforhumans()}}</td>
 			</tr>
