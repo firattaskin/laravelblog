@@ -1,10 +1,12 @@
-@extends('admin/dashboardmaster')
+@extends('layouts.admin')
 
 @section('title','Kullanıcı Listele')
 
 @section('icerik')
 <div class="container-fluid">
-
+	@if(Session::has('deleted_user'))
+	<p>{{session('deleted_user')}}</p>
+	@endif
 	<!-- Page Heading -->
 	<div class="row">
 		<div class="col-lg-12 "> 
@@ -18,6 +20,7 @@
 			</ol>
 		</div>
 	</div>
+
 	<!-- /.row -->
 	<table class="table table-striped">
 		<thead>
@@ -30,8 +33,8 @@
 			</tr>
 		</thead>
 		<tbody>
-@if($users)
-	@foreach($users as $user)
+			@if($users)
+			@foreach($users as $user)
 			<tr>
 				<td>{{$user->id}}</td>
 				<td><a href="{{ route('users.edit', $user->id ) }}">{{$user->name}}</a></td>
@@ -39,8 +42,8 @@
 				<td>{{$user->created_at->diffforhumans()}}</td>
 				<td><img src="{{ $user->photo ? $user->photo->file : 'no photo' }}"  height="100"></td>
 			</tr>
-	@endforeach
-@endif
+			@endforeach
+			@endif
 		</tbody>
 	</table>
 </div>

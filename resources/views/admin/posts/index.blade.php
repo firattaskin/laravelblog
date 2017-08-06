@@ -1,0 +1,54 @@
+@extends('layouts.admin')
+
+@section('title','Post Listele')
+
+@section('icerik')
+
+<div class="container-fluid">
+	<!-- Page Heading -->
+	<div class="row">
+		<div class="col-lg-12 "> 
+			<h1 class="page-header ">
+				Posts <small>Post Listele</small>
+			</h1>
+			<ol class="breadcrumb">
+					<li class="active">
+					<i class="fa fa-user"></i>
+				</li>
+			</ol>
+		</div>
+	</div>
+
+	<!-- /.row -->
+	<table class="table table-striped">
+		<thead>
+			<tr>
+				<th>Id</th>
+				<th>Title</th>
+				<th>Body</th>
+				<th>User</th>
+				<th>Category</th>
+				<th>Photo</th>
+				<th>Created At</th>
+
+				
+			</tr>
+		</thead>
+		<tbody>
+			@if($posts)
+			@foreach($posts as $post)
+			<tr>
+				<td>{{$post->id}}</td>
+				<td>{{$post->title}}</td>
+				<td>{{$post->body}}</td>
+				<td>{{$post->user->name}}</td>
+				<td>{{$post->category_id}}</td>
+				<td><img src="{{$post->photo ? $post->photo->file : 'https://placehold.it/400x400'}}" height="100px"></td>
+				<td>{{$post->created_at->diffforhumans()}}</td>
+			</tr>
+			@endforeach
+			@endif
+		</tbody>
+	</table>
+</div>
+@endsection
