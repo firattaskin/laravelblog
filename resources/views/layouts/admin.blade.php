@@ -82,6 +82,13 @@
 
                 <li class="active"><a href="{{url('/admin') }}">DashBoard<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-home"></span></a></li>
                 <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Category<span class="caret"></span><span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-cog"></span></a>
+                    <ul class="dropdown-menu forAnimate" role="menu">
+                        <li><a href="{{route('categories.index') }}">Category List</a></li>
+                        <li><a href="{{route('categories.create') }}">Category Create</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Posts <span class="caret"></span><span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-cog"></span></a>
                     <ul class="dropdown-menu forAnimate" role="menu">
                         <li><a href="{{route('posts.index') }}">Post List</a></li>

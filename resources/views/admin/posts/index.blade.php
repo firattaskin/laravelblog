@@ -14,11 +14,6 @@
 			<h1 class="page-header ">
 				Posts <small>Post Listele</small>
 			</h1>
-			<ol class="breadcrumb">
-					<li class="active">
-					<i class="fa fa-user"></i>
-				</li>
-			</ol>
 		</div>
 	</div>
 
