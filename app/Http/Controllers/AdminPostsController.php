@@ -97,11 +97,11 @@ class AdminPostsController extends Controller
 
             $name = time(). $file->getClientOriginalName();
             $file->move('images',$name);
-            $photo = Photo::create($file);
+            $photo = Photo::create(['file'=>$name]);
             $input['photo_id'] = $photo->id;
        }
 
-       return $user->posts()->whereId($id)->first()->update($input);
+       $user->posts()->whereId($id)->first()->update($input);
        return redirect('/admin/posts');
     }
 
