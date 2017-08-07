@@ -5,7 +5,7 @@
 @section('icerik')
 <div class="container-fluid">
 	@if(Session::has('deleted_user'))
-	<p>{{session('deleted_user')}}</p>
+	<div class="alert alert-success">{{session('deleted_user')}}</div>
 	@endif
 	<!-- Page Heading -->
 	<div class="row">
