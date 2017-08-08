@@ -11,16 +11,12 @@
 |
 */
 
-Route::get('/', function () {
-	return view('welcome');
-});
-
-Auth::routes();
-
+Route::get('/', 'HomeController@index');
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::get('/post/{id}', ['as'=>'home.post','uses'=>'AdminPostsController@post']);
 
-
+Auth::routes();
 //ADMİN DASHBOARD YÖNLENDİRMELERİ
 
 Route::group(['middleware'=>'admin'],function(){
@@ -32,5 +28,7 @@ Route::group(['middleware'=>'admin'],function(){
 	Route::resource('admin/posts','AdminPostsController');
 	Route::resource('admin/categories','AdminCategoriesController');
 	Route::resource('admin/medias','AdminMediaController');
+	Route::resource('admin/comments','PostCommentController');
+	Route::resource('admin/comments/replies','CommentRepliesController');
 });
 

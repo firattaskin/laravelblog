@@ -2,6 +2,10 @@
 
 @section('title','AdminPaneli')
 
+@section('head')
+<link rel="stylesheet" href="{{ URL::asset('/css/db.css') }}">
+@endsection
+
 @section('icerik')
 
 <!-- /.Başlık -->

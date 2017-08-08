@@ -9,9 +9,12 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>{{ config('app.name', 'Laravel') }}</title>
-
+    
+    @yield('head')
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+    <link rel="stylesheet" href="{{ URL::asset('css/app.css') }}" >
+
 </head>
 <body>
     <div id="app">
@@ -29,7 +32,10 @@
 
                     <!-- Branding Image -->
                     <a class="navbar-brand" href="{{ url('/') }}">
-                        {{ config('app.name', 'Laravel') }}
+                        Fırat Taşkın Blog
+                    </a>
+                    <a class="navbar-brand" href="{{ url('/admin') }}">
+                        AdminPanel
                     </a>
                 </div>
 
@@ -76,5 +82,6 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
+    @yield('scripts')
 </body>
 </html>

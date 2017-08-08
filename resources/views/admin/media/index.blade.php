@@ -2,6 +2,10 @@
 
 @section('title','Fotograf Listele')
 
+@section('head')
+<link rel="stylesheet" href="{{ URL::asset('/css/db.css') }}">
+@endsection
+
 @section('icerik')
 
 <div class="container-fluid">

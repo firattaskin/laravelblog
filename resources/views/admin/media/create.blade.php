@@ -1,9 +1,12 @@
 @extends('layouts.admin')
 
 @section('title','Fotograf Ekle')
+
 @section('head')
 <link rel="stylesheet" href="{{ URL::asset('/css/dropzone.min.css') }}">
+<link rel="stylesheet" href="{{ URL::asset('/css/db.css') }}">
 @endsection
+
 @section('icerik')
 <div class="container-fluid">
 	<!-- Page Heading -->
